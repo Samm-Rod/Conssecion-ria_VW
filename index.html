@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conssecionária VW</title>
+</head>
+<body>
+    <header>
+        <h2><img src="imagem/icons8-vw-100.png" alt="VolksWagen icon" ></h2>
+        <ul>
+            <li><a href="veiculo/cad_veiculo.html">Veículos</a></li>
+            <li><a href="cliente/cad_cliente.html">Clientes</a></li>
+            <li><a href="peças/cad_peca.html">Peças</a></li>
+        </ul>
+    </header>
+
+    <section>
+    <p>
+        Bem-vindo à Concessionária VolksWagen CRUD. Gerencie 
+        facilmente o cadastro de veículos, clientes e peças.
+    </p>
+    </section>
+
+    <section>
+        <img id="car01" src="imagem/CarIllustrations01.jpg"  alt="car01">
+    </section>
+
+    <footer>
+        <small>
+          Copyright © 2023 Conssecionária VolksWagen CRUD.
+        </small>
+      </footer>
+</body>
+</html>
+
+<style>
+/* Reset de estilos padrão */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+header {
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center;
+}
+
+header h2 {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+
+section {
+    padding: 20px;
+    display: flex;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilo para a seção do texto principal */
+section p {
+    font-size: 1.2em;
+    white-space: pre-line;
+    margin-left: 24px ;
+}
+
+/* Estilo para a imagem na segunda seção */
+
+
+#car01 {
+    /* Cada imagem ocupa metade da largura da seção */
+    height: auto;
+    width: 500px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 0px rgb(96, 96, 96);
+}
+
+/* Estilo para o texto do footer */
+footer small {
+    font-size: 0.8em;
+}
+
+</style>
