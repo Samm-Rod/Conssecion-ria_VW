@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="cad_cliente.css">
     <title>Formulário do cliente</title>
 
 </head>
@@ -15,7 +16,7 @@
         </ul>
     </header>
 
-    <form method="post" action="cad_cliente.php">
+    <form method="post" action="Controller/Create.php">
         <h2>Cadastro Cliente</h2>
         
         <label for="nome">Nome:</label>
@@ -34,103 +35,8 @@
 
     <footer>
         <small>
-          Copyright © 2023 Conssecionária VolksWagen CRUD.
+          Copyright © 2023 Concessionária VolksWagen CRUD.
         </small>
       </footer>
 </body>
 </html>
-<style>
-   body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
-    margin: 0;
-}
-
-header {
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center;
-}
-
-header h2 {
-    margin: 0;
-}
-
-ul {
-    list-style: none;
-}
-
-ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-ul li a {
-    text-decoration: none;
-    color: #232323;
-    font-weight: bold;
-}
-
-#cliente{
-    text-decoration: none;
-    color: #232323;
-    font-weight: bold;
-}
-
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form h2 {
-    text-align: center;
-}
-
-form label {
-    display: block;
-    margin: 10px 0;
-}
-
-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-}
-
-form button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-form button[type="reset"] {
-    background-color: #ccc;
-    margin-right: 10px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-footer small {
-    font-size: 0.8em;
-}
-
-</style>

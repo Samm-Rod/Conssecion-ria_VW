@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formUpdate_veiculo.css">
     <title>Alterar dados do Veículo</title>
 </head>
 <body>
@@ -15,27 +16,30 @@
         </ul>
     </header>
     <?php
+        include_once('/xampp/htdocs/concessionariaVW/connection.php');
         $id = $_POST['id'];
-        $con = mysqli_connect("127.0.0.1", "root", "", "db_concessionaria");
 
         if (mysqli_connect_errno()) {
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
         }
 
-        $result = mysqli_query($con, "SELECT * FROM tb_veiculo WHERE id='$id'");
+        $result = mysqli_query($conn, "SELECT * FROM tb_veiculo WHERE id='$id'");
 
     ?>
 
     <p>
     <center>
         <form action="update_veiculo.php" method="post">
-
+            <h2>Update veículo</h2>
             <?php while ($row = mysqli_fetch_array($result)) { ?>
 
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
-                <label><input type="text" placeholder="Modelo" name="modelo" value="<?php echo $row['modelo']; ?>" /> </label><br/>
-                <label><input type="text" placeholder="Cor" name="cor" value="<?php echo $row['cor']; ?>" /> </label><br/>
-                <label><input type="text" placeholder="Valor" name="valor" value="<?php echo $row['valor']; ?>" /> </label><br/>
+                <label for="nome">Modelo:</label>
+                <label><input type="text" placeholder="Modelo" name="modelo" value="<?php echo $row['modelo']; ?>" /> </label>
+                <label for="nome">Cor:</label>
+                <label><input type="text" placeholder="Cor" name="cor" value="<?php echo $row['cor']; ?>" /> </label>
+                <label for="nome">Valor:</label>
+                <label><input type="text" placeholder="Valor" name="valor" value="<?php echo $row['valor']; ?>" /> </label>
                 <button type="submit" name="enviar" value="ok"> Alterar </button>
 
             <?php } ?>
@@ -45,7 +49,7 @@
     </p>
     <footer>
         <small>
-        Copyright © 2023 Conssecionária VolksWagen CRUD.
+        Copyright © 2023 Concessionária VolksWagen CRUD.
         </small>
     </footer>
 </body>

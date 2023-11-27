@@ -7,14 +7,13 @@
 </head>
 <body>
     <?php 
+        include_once('/xampp/htdocs/concessionariaVW/connection.php');
     
         $modelo = $_POST['modelo'];
         $cor = $_POST['cor'];
         $valor = $_POST['valor'];
         
-
         $sql = "INSERT INTO tb_veiculo (modelo, cor, valor) VALUES ('$modelo','$cor','$valor')";
-        $conn = mysqli_connect("localhost","root","","db_concessionaria");
 
         if(mysqli_connect_error()){
             die("Not found DB db_concessionaria! ".mysqli_connect_error());

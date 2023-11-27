@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="select_peca.css">
     <title>Listar Cursos</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
     </header>
     
     <?php
-    $conn = mysqli_connect("localhost", "root", "", "db_concessionaria");
+    include_once('/xampp/htdocs/concessionariaVW/connection.php');
 
     if (!$conn) {
         echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -78,85 +79,10 @@
 
     <footer>
         <small>
-          Copyright © 2023 Conssecionária VolksWagen CRUD.
+          Copyright © 2023 Concessionária VolksWagen CRUD.
         </small>
       </footer>
 
 </body>
 </html>
 
-<style>
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
-    margin: 0;
-}
-
-header {
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center;
-}
-
-header h2 {
-    margin: 0;
-}
-
-ul {
-    list-style: none;
-}
-
-ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-table {
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-}
-
-th {
-    background-color: #333;
-    color: #fff;
-}
-
-form button {
-    background-color: #333;
-    color: #fff;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-footer small {
-    font-size: 0.8em;
-}
-</style>

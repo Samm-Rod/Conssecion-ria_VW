@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formUpdate_cliente.css">
     <title>Alterar funcionário</title>
 </head>
 <body>
@@ -15,29 +16,29 @@
         </ul>
     </header>
     <?php
+        include_once('/xampp/htdocs/concessionariaVW/connection.php');
+        $id = $_POST['id'];
+        if (mysqli_connect_errno()) {
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+        }
 
-            $id = $_POST['id'];
-
-            $con = mysqli_connect("127.0.0.1", "root", "", "db_concessionaria");
-
-            if (mysqli_connect_errno()) {
-                echo "Failed to connect to MySQL: " . mysqli_connect_error();
-            }
-
-            $result = mysqli_query($con, "SELECT * FROM tb_cliente WHERE id='$id'");
+        $result = mysqli_query($conn, "SELECT * FROM tb_cliente WHERE id='$id'");
 
     ?>
 
     <p>
     <center>
         <form action="update_cliente.php" method="post">
-
+        <h2>Update Cliente</h2>
             <?php while ($row = mysqli_fetch_array($result)) { ?>
 
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>" />
-                <label><input type="text" placeholder="Nome" name="nome" value="<?php echo $row['nome']; ?>" /> </label><br/>
-                <label><input type="date" name="dNasc" value="<?php echo $row['dNasc']; ?>" /> </label><br/>
-                <label><input type="text" placeholder="CPF" name="cpf" value="<?php echo $row['cpf']; ?>" /> </label><br/>
+                <label for="nome">Nome:</label>
+                <label><input type="text" placeholder="Nome" name="nome" value="<?php echo $row['nome']; ?>" /> </label>
+                <label for="nome">Data de nascimento:</label>
+                <label><input type="date" name="dNasc" value="<?php echo $row['dNasc']; ?>" /> </label>
+                <label for="nome">CPF:</label>
+                <label><input type="text" placeholder="CPF" name="cpf" value="<?php echo $row['cpf']; ?>" /> </label>
                 <button type="submit" name="enviar" value="ok"> Alterar </button>
 
             <?php } ?>
@@ -48,99 +49,9 @@
 
         <footer>
             <small>
-            Copyright © 2023 Conssecionária VolksWagen CRUD.
+            Copyright © 2023 Concessionária VolksWagen CRUD.
             </small>
         </footer>
 </body>
 </html>
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
-    margin: 0;
-}
-
-header {
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente */
-    align-items: center;
-}
-
-header h2 {
-    margin: 0;
-}
-
-ul {
-    list-style: none;
-}
-
-ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-
-ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-}
-
-form {
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-form h2 {
-    text-align: center;
-}
-
-form label {
-    display: block;
-    margin: 10px 0;
-}
-
-form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    box-sizing: border-box;
-}
-
-form button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-form button[type="reset"] {
-    background-color: #ccc;
-    margin-right: 10px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-footer small {
-    font-size: 0.8em;
-}
-
-
-</style>
